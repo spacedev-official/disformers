@@ -14,10 +14,12 @@ pip install -U disformers
 - use client
 ```python
 import discord
-from disformers.DisFormers import DisFormersBot
+from DisFormers import DisFormersBot
 
 client = discord.Client()
 disformerbot = DisFormersBot(client, prefix="!")
+# DisFormersBot(client,prefix="!",languague="en") default languague is English
+# you can choose English(en) or Korean(ko) languague option
 
 @client.event
 async def on_ready():
@@ -35,7 +37,7 @@ if __name__ == "__main__":
 ```python
 import discord
 from discord.ext import commands
-from disformers.DisFormers import DisFormersBot
+from DisFormers import DisFormersBot
 
 class MyBot(commands.Bot):
     def __init__(self, *args, **kwargs):
@@ -47,7 +49,7 @@ class MyBot(commands.Bot):
 
 my_bot = MyBot(command_prefix="!", intents=discord.Intents.all())
 DisFormersBot(my_bot,prefix="!")
-#DisFormersBot(client,prefix="!",languague="en") default languague is English
+# DisFormersBot(client,prefix="!",languague="en") default languague is English
 # you can choose English(en) or Korean(ko) languague option
 
 if __name__ == "__main__":
