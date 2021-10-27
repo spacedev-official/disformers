@@ -23,7 +23,7 @@ setuptools.setup(
     description="Huggingface transformers for discord.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/SpaceDEVofficial/disformers",
+    url="https://github.com/spacedev-official/disformers",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License"
