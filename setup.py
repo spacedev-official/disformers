@@ -27,6 +27,7 @@ setuptools.setup(
         "License :: OSI Approved :: Apache Software License"
     ],
     python_requires='>=3.7',
+    packages=['DisFormers'],
     install_requires=[
         'certifi==2021.5.30',
         'charset-normalizer==2.0.6',
