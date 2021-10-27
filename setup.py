@@ -16,8 +16,6 @@ with pathlib.Path('requirements.txt').open() as requirements_txt:
 setuptools.setup(
     name="disformers",
     version=__version__,
-    package_dir={"": "DisFormers"},
-    packages=setuptools.find_namespace_packages(where="DisFormers"),
     author="SpaceDEV",
     author_email="support@spacedev.space",
     description="Huggingface transformers for discord.",
