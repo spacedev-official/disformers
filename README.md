@@ -1,5 +1,19 @@
-# disformers
- - Huggingface transformers for discord
+<h1 align="center">disformers</h1>
+
+<p align="center">
+  <a href="https://www.codefactor.io/repository/github/spacedev-official/disformers"><img src="https://www.codefactor.io/repository/github/spacedev-official/disformers/badge" alt="CodeFactor" /></a>
+  <a href="https://discord.gg/294KSUxcz2"><img alt="Discord" src="https://img.shields.io/discord/847729860881154078?logo=discord&style=flat-square"></a>
+  <a href="https://pepy.tech/project/discordsuperutils"><img src="https://img.shields.io/pypi/v/disformers?style=flat-square" /></a>
+  <a href="https://pypi.org/project/discordSuperUtils/"><img src="https://static.pepy.tech/personalized-badge/disformers?period=month&units=international_system&left_color=grey&right_color=orange&left_text=Downloads" /></a>
+  <a href=""><img src="https://img.shields.io/pypi/l/disformers?style=flat-square" /></a>
+</p>
+
+<p align="center">
+   A Huggingface transformers for discord.
+    <br/>
+   <b>if you have any questions, feel free to ask them in our <a href="https://discord.gg/294KSUxcz2">discord server.</a></b>
+</p>
+
  - base source [butyr/huggingface-transformer-chatbots](https://github.com/butyr/huggingface-transformer-chatbots)
 
 # install
