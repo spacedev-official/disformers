@@ -5,7 +5,7 @@ https://www.machinecurve.com/index.php/2021/03/16/easy-chatbot-with-dialogpt-mac
 import asyncio
 from typing import Union
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer
 import os
 from discord import (
     Message,
@@ -23,15 +23,15 @@ class DisFormersBot:
         if languague == "en":
             model_name = 'microsoft/DialoGPT-small'
             if not os.path.exists('./models/dialogpt'):
-                AutoModelForCausalLM.from_pretrained(model_name).save_pretrained('./models/dialogpt')
+                AutoModel.from_pretrained(model_name).save_pretrained('./models/dialogpt')
                 AutoTokenizer.from_pretrained(model_name).save_pretrained('./models/dialogpt')
         if languague == "ko":
             model_name = 'kykim/albert-kor-base'
             if not os.path.exists('./models/dialogpt'):
-                AutoModelForCausalLM.from_pretrained(model_name).save_pretrained('./models/dialogpt')
+                AutoModel.from_pretrained(model_name).save_pretrained('./models/dialogpt')
                 AutoTokenizer.from_pretrained(model_name).save_pretrained('./models/dialogpt')
         super().__init__()
-        self.model = AutoModelForCausalLM.from_pretrained('./models/dialogpt')
+        self.model = AutoModel.from_pretrained('./models/dialogpt')
         self.tokenizer = AutoTokenizer.from_pretrained('./models/dialogpt')
         self.bot = client
         self.prefix = prefix
