@@ -26,7 +26,7 @@ class DisFormersBot:
                 AutoModelForPreTraining.from_pretrained(model_name).save_pretrained('./models/dialogpt')
                 AutoTokenizer.from_pretrained(model_name).save_pretrained('./models/dialogpt')
         if languague == "ko":
-            model_name = 'byeongal/Ko-DialoGPT'
+            model_name = 'kykim/electra-kor-base'
             if not os.path.exists('./models/dialogpt'):
                 AutoModelForPreTraining.from_pretrained(model_name).save_pretrained('./models/dialogpt')
                 AutoTokenizer.from_pretrained(model_name).save_pretrained('./models/dialogpt')
