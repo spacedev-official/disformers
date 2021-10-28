@@ -2,6 +2,7 @@
 Adapted from:
 https://www.machinecurve.com/index.php/2021/03/16/easy-chatbot-with-dialogpt-machine-learning-and-huggingface-transformers/
 """
+import asyncio
 from typing import Union
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -11,7 +12,7 @@ from discord import (
     Client
 )
 from discord.ext import commands
-
+from aioify import aioify
 class DisFormersBot:
     def __init__(
         self,
@@ -37,8 +38,7 @@ class DisFormersBot:
         if type(self.bot) == commands.Bot:
             self.bot.add_listener(self.__hendle_messages, "on_message")
 
-
-    def __call__(self, inputs: str) -> str:
+    async def chat(self, inputs: str) -> str:
         inputs_tokenized = self.tokenizer.encode(inputs+ self.tokenizer.eos_token, return_tensors='pt')
         reply_ids = self.model.generate(inputs_tokenized, max_length=1250, pad_token_id=self.tokenizer.eos_token_id)
         return self.tokenizer.decode(
@@ -52,7 +52,9 @@ class DisFormersBot:
         if message.content.startswith(self.prefix):
             async with message.channel.typing():
                 user_input = message.content[len(self.prefix):]
-            await message.reply(content=self(user_input))
+                chat_ = aioify(obj=self.chat)
+                res = await chat_(inputs=user_input)
+                return await message.reply(content=res)
 
     async def client_message(self,message:Message):
         if message.author.bot:
@@ -60,4 +62,6 @@ class DisFormersBot:
         if message.content.startswith(self.prefix):
             async with message.channel.typing():
                 user_input = message.content[len(self.prefix):]
-            await message.reply(content=self(user_input))
+                chat_ = aioify(obj=self.chat)
+                res = await chat_(user_input)
+                return await message.reply(content=res)

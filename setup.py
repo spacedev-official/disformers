@@ -16,8 +16,6 @@ with pathlib.Path('requirements.txt').open() as requirements_txt:
 setuptools.setup(
     name="disformers",
     version=__version__,
-    package_dir={"": "DisFormers"},
-    packages=setuptools.find_namespace_packages(where="DisFormers"),
     author="SpaceDEV",
     author_email="support@spacedev.space",
     description="Huggingface transformers for discord.",
@@ -29,7 +27,9 @@ setuptools.setup(
         "License :: OSI Approved :: Apache Software License"
     ],
     python_requires='>=3.7',
+    packages=['DisFormers'],
     install_requires=[
+        'aioify==0.4.0',
         'certifi==2021.5.30',
         'charset-normalizer==2.0.6',
         'click==8.0.1',
