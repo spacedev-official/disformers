@@ -30,4 +30,4 @@ transformers==4.11.3
 typing-extensions==3.10.0.2
 urllib3==1.26.7
 yarl==1.7.0
-zipp==3.5.0
+zipp==3.9.0
